@@ -10,7 +10,7 @@ import random
 
 def copyRandomSampledFiles(no_files, inputDir=None, outputDir=None):
     # ip_filenames = glob(inputDir + "/**/*.jpg", recursive=True)
-    ip_filenames = glob(inputDir + "/*.jpg", recursive=False)
+    ip_filenames = glob(inputDir + "/*.png", recursive=False)
     print(f"len ip_filenames : {len(ip_filenames)}")
 
     rand_indices = np.random.choice(len(ip_filenames), no_files, replace=False)
@@ -22,7 +22,7 @@ def copyRandomSampledFiles(no_files, inputDir=None, outputDir=None):
         file_to_copy = ip_filenames[id]
         shutil.copy(file_to_copy, outputDir)
 
-    op_fs = glob(outputDir + "/*.jpg")
+    op_fs = glob(outputDir + "/*.png")
     print(f"no files copied : {len(op_fs)}")
 
 def pngToJpg(inputDir=None):
@@ -155,6 +155,12 @@ if __name__=="__main__":
 	# copyRandomSampledFiles(200, inputDir="output_data/qm-2020-10-30-minicrane/left_trolley_cam", outputDir="output_data/unload4/left_trolley")
 	# copyRandomSampledFiles(50, inputDir="output_data/qm-2020-10-30-minicrane/right_trolley_cam", outputDir="output_data/unload4/right_trolley")
 	# copyRandomSampledFiles(200, inputDir="output_data/qm-2020-10-30-minicrane/sillbeam_center_cam", outputDir="output_data/unload4/sillbeam")
+	# pngToJpg(inputDir="output_data/qm-2020-10-30-minicrane/sillbeam_cam")
+	# copyRandomSampledFiles(250, 
+	# 					inputDir="/Users/victorgeorge/Downloads/trainingtrailer_trolleycam_500/labels", 
+	# 					outputDir="../short_wood/short_wood_ds/wood_classifier/trainingtrailer_labels")
+	
+
 
 
 
